@@ -15,10 +15,10 @@ MonoBehaviour:
   DatabaseType: 2
   CategoryNames:
   - Custom
-  - Example
   - General
   - Main
+  - Game
   Categories:
-  - {fileID: 11400000, guid: b01e98f4801f7124ba39e1dac4debf90, type: 2}
   - {fileID: 11400000, guid: 037c74c9b6a4f734190b8825ea96c45e, type: 2}
   - {fileID: 11400000, guid: 2fe9c3248f4908442b0d7d1e0edc25bc, type: 2}
+  - {fileID: 11400000, guid: 1b59ec55d84ad114bb29b41730b5cda5, type: 2}
