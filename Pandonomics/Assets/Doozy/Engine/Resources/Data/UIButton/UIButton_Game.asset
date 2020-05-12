@@ -16,3 +16,5 @@ MonoBehaviour:
   DatabaseType: 0
   Names:
   - Close News
+  - End Day
+  - Close Stock Market
