@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e235ab44f27414f4e8877f986c9dd7ea, type: 3}
+  m_Name: Versicherung
+  m_EditorClassIdentifier: 
+  stockGroupName: 
+  allGrowthValues:
+  - NaN
+  - NaN
+  - NaN
+  - NaN
+  - NaN
+  - NaN
+  - NaN
+  - NaN
+  - NaN
+  - NaN
+  - NaN
+  - NaN
+  numberOfStocks: 3
+  allStocks:
+  - {fileID: 11400000, guid: 3e6e53006ca06aa4d8d07d0cc7791b00, type: 2}
+  - {fileID: 11400000, guid: 7add60762d5e09749a47075a50ef3650, type: 2}
+  - {fileID: 11400000, guid: 2ac0987e4d3cb3e4e9fae1160868f906, type: 2}

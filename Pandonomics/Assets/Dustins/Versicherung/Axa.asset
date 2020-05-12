@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5cdd8a9f5aede14fb060939792bd570, type: 3}
+  m_Name: Axa
+  m_EditorClassIdentifier: 
+  stockName: Axa
+  allStockValues:
+  - 23.96
+  - 24.78
+  - 25.42
+  - 24.12
+  - 21
+  - 20.63
+  - 15.14
+  - 12.85
+  - 16.32
+  - 14.92
+  - 15.76
+  - 14.75
+  - 14.69

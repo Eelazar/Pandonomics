@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5cdd8a9f5aede14fb060939792bd570, type: 3}
+  m_Name: Allianz
+  m_EditorClassIdentifier: 
+  stockName: Allianz
+  allStockValues:
+  - 214.5
+  - 227.1
+  - 230.82
+  - 230.4
+  - 195.18
+  - 193.38
+  - 150
+  - 125.68
+  - 159.08
+  - 153
+  - 166.48
+  - 158.76
+  - 158.5
