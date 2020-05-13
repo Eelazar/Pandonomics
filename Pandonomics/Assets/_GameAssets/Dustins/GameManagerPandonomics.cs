@@ -20,6 +20,7 @@ public class GameManagerPandonomics : MonoBehaviour
     [SerializeField] private float cycleDuration; //Length of a day/week in seconds;
     [SerializeField] private int maxTicks; //ticks per week
     [SerializeField] private int gameTime; //complete duration of the game in weeks
+    [SerializeField] private int startingSum; //Amount of money you have at the start of the game
 
     [Header("Values")]
     public float[] startingRandomValues; //random values for the stockgroups
@@ -34,7 +35,6 @@ public class GameManagerPandonomics : MonoBehaviour
 
     //Stats
     private int numberOfGroups; //how much different groups are in the game
-    private int currentWeek; //duh
     private int currentTick; //currenttick of the gametimeunit
 
     //Other
@@ -69,8 +69,8 @@ public class GameManagerPandonomics : MonoBehaviour
     void UpdateUI()
     {
         int remaining = (int)((cycleStartTime + cycleDuration) - Time.time);
-        week_Text.text = "Week " + (currentWeek + 1) + "\nRemaining Time: " + remaining + "\nTick Duration: " + tickDuration;
-        stats_Text.text = "Net Worth: " + PlayerPrefs.GetFloat("NetWorth");
+        week_Text.text = "Week " + (PlayerPrefs.GetInt("CurrentWeek") + 1) + "\nRemaining Time: " + remaining + "\nTick Duration: " + tickDuration;
+        stats_Text.text = "Bank Account: " + PlayerPrefs.GetFloat("CurrentAmount") + "€\nWeekly Earnings: " + PlayerPrefs.GetFloat("WeeklyEarnings") + "€";
     }
 
     private IEnumerator Cycle()
@@ -114,8 +114,10 @@ public class GameManagerPandonomics : MonoBehaviour
 
     void StartGame()
     {
-        //Reset Week Count
-        currentWeek = 0;
+        //Reset Values
+        PlayerPrefs.SetFloat("CurrentAmount", startingSum); 
+        PlayerPrefs.SetInt("CurrentWeek", 0); 
+        PlayerPrefs.SetFloat("WeeklyEarnings", 0); 
 
         //Set Initial Stock Values
         for (int i = 0; i < textStockGroups.Length; i++)
@@ -153,12 +155,12 @@ public class GameManagerPandonomics : MonoBehaviour
         cycleOn = true;
         endOfCycle_Panel.SetActive(false);
         currentTick = 0;
-        if (currentWeek < gameTime)
+        if (PlayerPrefs.GetInt("CurrentWeek") < gameTime)
         {
             for (int i = 0; i < numberOfGroups; i++)
             {
                 beginningOfDayValues[i] = currentValues[i];
-                dailyTickChange[i] = (allValues[i, currentWeek + 1] - currentValues[i]) / maxTicks;
+                dailyTickChange[i] = (allValues[i, PlayerPrefs.GetInt("CurrentCycle") + 1] - currentValues[i]) / maxTicks;
             }
         }
     }
@@ -166,12 +168,16 @@ public class GameManagerPandonomics : MonoBehaviour
     void EndWeek()
     {
         cycleOn = false;
-        currentWeek++;
+        PlayerPrefs.SetInt("CurrentWeek", PlayerPrefs.GetInt("CurrentWeek") + 1);
 
         //UI
-        weekStart_Text.text = "Week " + (currentWeek + 1);
-        weekEnd_Header_Text.text = "Week " + (currentWeek);
-        weekEnd_Earnings_Text.text = "You have earned " + PlayerPrefs.GetFloat("WeeklyEarnings") + " this week.\n\nYour total balance is " + PlayerPrefs.GetFloat("TotalEarnings");
+        weekStart_Text.text = "Week " + (PlayerPrefs.GetInt("CurrentWeek") + 1);
+        weekEnd_Header_Text.text = "Week " + (PlayerPrefs.GetInt("CurrentWeek"));
+        weekEnd_Earnings_Text.text = "You have earned " + PlayerPrefs.GetFloat("WeeklyEarnings") + " this week.\n\nYour total balance is " + PlayerPrefs.GetFloat("CurrentAmount");
+
+        //Update Stats
+        PlayerPrefs.SetFloat("CurrentAmount", PlayerPrefs.GetFloat("CurrentAmount") + PlayerPrefs.GetFloat("WeeklyEarnings"));
+        PlayerPrefs.SetFloat("WeeklyEarnings", 0);
     }
 
     void EndGame()
