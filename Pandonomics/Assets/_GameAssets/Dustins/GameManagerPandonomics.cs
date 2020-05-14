@@ -122,6 +122,13 @@ public class GameManagerPandonomics : MonoBehaviour
         PlayerPrefs.SetFloat("CurrentBalance", startingSum); 
         PlayerPrefs.SetInt("CurrentWeek", 0); 
         PlayerPrefs.SetFloat("WeeklyEarnings", 0); 
+        PlayerPrefs.SetFloat("WeeklyExpenses", 0); 
+        for(int i = 0; i < numberOfGroups; i++)
+        {
+            PlayerPrefs.SetInt("AmountOwned_" + (i + 1), 0);
+        }
+        PlayerPrefs.SetInt("NewsTutorial", 0);
+        PlayerPrefs.SetInt("StockTutorial", 0);
 
         //Set Initial Stock Values
         for (int i = 0; i < stockPrice_Text.Length; i++)
