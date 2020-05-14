@@ -20,9 +20,11 @@ MonoBehaviour:
   - Main
   - Game
   - Stocks
+  - News Articles
   Categories:
   - {fileID: 11400000, guid: 40f9e81ff80114a47a3721228ba749ed, type: 2}
   - {fileID: 11400000, guid: 3aac7099da2fb3f4ea00f55eb80e8080, type: 2}
   - {fileID: 11400000, guid: 435a299d76b8ac74d9719e48d2dd4739, type: 2}
   - {fileID: 11400000, guid: 6bea170d2f804074ca9425930bb679f2, type: 2}
   - {fileID: 11400000, guid: bed2ae8900589fb489fdce4117122860, type: 2}
+  - {fileID: 11400000, guid: b11f388bf179f824d8a74123da9d598a, type: 2}
