@@ -15,6 +15,10 @@ public class GameManagerPandonomics : MonoBehaviour
     public TMP_Text weekEnd_Header_Text; //Window that is shown at the end of the week along with financial stats
     public TMP_Text weekEnd_Earnings_Text; 
     public GameObject endOfCycle_Panel; //Panel that pops up when the week is over
+    public TMP_Text[] stockPrice_Text; //Text showing the current stock price
+    public TMP_Text[] stockChange_Text; //Text showing the current stock price
+    public Color green;
+    public Color red;
 
     [Header("Settings")]
     [SerializeField] private float cycleDuration; //Length of a day/week in seconds;
@@ -25,7 +29,6 @@ public class GameManagerPandonomics : MonoBehaviour
     [Header("Values")]
     public float[] startingRandomValues; //random values for the stockgroups
     public AktienGruppe[] allStockGroups; //all of the groups
-    public TextMeshProUGUI[] textStockGroups; //testtexte
     public float[,] allValues; //first Value is the Stock Group, Second the current week;
     public float[] beginningOfDayValues; //wert am anfang des tages
     public float[] dailyTickChange; //calculated change per tick
@@ -70,7 +73,7 @@ public class GameManagerPandonomics : MonoBehaviour
     {
         int remaining = (int)((cycleStartTime + cycleDuration) - Time.time);
         week_Text.text = "Week " + (PlayerPrefs.GetInt("CurrentWeek") + 1) + "\nRemaining Time: " + remaining + "\nTick Duration: " + tickDuration;
-        stats_Text.text = "Bank Account: " + PlayerPrefs.GetFloat("CurrentAmount") + "€\nWeekly Earnings: " + PlayerPrefs.GetFloat("WeeklyEarnings") + "€";
+        stats_Text.text = "Bank Account: " + PlayerPrefs.GetFloat("CurrentBalance") + "€\nWeekly Earnings: " + PlayerPrefs.GetFloat("WeeklyEarnings") + "€";
     }
 
     private IEnumerator Cycle()
@@ -115,14 +118,14 @@ public class GameManagerPandonomics : MonoBehaviour
     void StartGame()
     {
         //Reset Values
-        PlayerPrefs.SetFloat("CurrentAmount", startingSum); 
+        PlayerPrefs.SetFloat("CurrentBalance", startingSum); 
         PlayerPrefs.SetInt("CurrentWeek", 0); 
         PlayerPrefs.SetFloat("WeeklyEarnings", 0); 
 
         //Set Initial Stock Values
-        for (int i = 0; i < textStockGroups.Length; i++)
+        for (int i = 0; i < stockPrice_Text.Length; i++)
         {
-            textStockGroups[i].text = "" + allValues[i, 0];
+            stockPrice_Text[i].text = "" + allValues[i, 0];
         }
         for (int i = 0; i < numberOfGroups; i++)
         {
@@ -137,11 +140,23 @@ public class GameManagerPandonomics : MonoBehaviour
         {
             for (int i = 0; i < numberOfGroups; i++)
             {
-                //Update Values
+                //Update and round Values
                 currentValues[i] += dailyTickChange[i];
+                float roundedTickChange = Mathf.Round(dailyTickChange[i] * 100f) / 100f;
+                float roundedCurrentValue = Mathf.Round(currentValues[i] * 100f) / 100f;
 
                 //Update UI
-                textStockGroups[i].text = "" + currentValues[i];
+                stockPrice_Text[i].text = "" + roundedCurrentValue;                
+                if (dailyTickChange[i] >= 0)
+                {
+                    stockChange_Text[i].text = "+" + roundedTickChange;
+                    stockChange_Text[i].color = green;
+                }
+                else
+                {
+                    stockChange_Text[i].text = "" + roundedTickChange;
+                    stockChange_Text[i].color = red;
+                }
             }
         }
         else
@@ -173,11 +188,12 @@ public class GameManagerPandonomics : MonoBehaviour
         //UI
         weekStart_Text.text = "Week " + (PlayerPrefs.GetInt("CurrentWeek") + 1);
         weekEnd_Header_Text.text = "Week " + (PlayerPrefs.GetInt("CurrentWeek"));
-        weekEnd_Earnings_Text.text = "You have earned " + PlayerPrefs.GetFloat("WeeklyEarnings") + " this week.\n\nYour total balance is " + PlayerPrefs.GetFloat("CurrentAmount");
+        weekEnd_Earnings_Text.text = "You have earned " + PlayerPrefs.GetFloat("WeeklyEarnings") + "€ this week.\n\nYou spent " + PlayerPrefs.GetFloat("WeeklyExpenses") + "€.\n\nYour total balance is " + PlayerPrefs.GetFloat("CurrentBalance") + "€.";
 
         //Update Stats
-        PlayerPrefs.SetFloat("CurrentAmount", PlayerPrefs.GetFloat("CurrentAmount") + PlayerPrefs.GetFloat("WeeklyEarnings"));
+        PlayerPrefs.SetFloat("CurrentBalance", PlayerPrefs.GetFloat("CurrentBalance ") + PlayerPrefs.GetFloat("WeeklyEarnings"));
         PlayerPrefs.SetFloat("WeeklyEarnings", 0);
+        PlayerPrefs.SetFloat("WeeklyExpenses", 0);
     }
 
     void EndGame()

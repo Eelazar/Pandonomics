@@ -7,7 +7,7 @@ public class Stock : MonoBehaviour
 {
     public Sprite icon;
     public string name;
-    public string id;
+    public int id;
 
     public DetailView detailView;
 
