@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using Doozy.Engine;
 using UnityScript.Steps;
+using Doozy.Engine.UI;
 
 public class GameManagerPandonomics : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class GameManagerPandonomics : MonoBehaviour
     public TMP_Text weekStart_Text; //Window that shows at beginning of week
     public TMP_Text weekEnd_Header_Text; //Window that is shown at the end of the week along with financial stats
     public TMP_Text weekEnd_Earnings_Text; 
-    public GameObject endOfCycle_Panel; //Panel that pops up when the week is over
+    public UIPopup endOfWeek_Popup; //Panel that pops up when the week is over
     public TMP_Text[] stockPrice_Text; //Text showing the current stock price
     public TMP_Text[] stockChange_Text; //Text showing the current stock price
     public Color green;
@@ -88,7 +89,7 @@ public class GameManagerPandonomics : MonoBehaviour
             yield return new WaitForSeconds(tickDuration);
         }
 
-        endOfCycle_Panel.SetActive(true);
+        endOfWeek_Popup.Show();
     }
 
     private void InitializeStocks()
@@ -168,7 +169,6 @@ public class GameManagerPandonomics : MonoBehaviour
     public void StartWeek()
     {
         cycleOn = true;
-        endOfCycle_Panel.SetActive(false);
         currentTick = 0;
         if (PlayerPrefs.GetInt("CurrentWeek") < gameTime)
         {
