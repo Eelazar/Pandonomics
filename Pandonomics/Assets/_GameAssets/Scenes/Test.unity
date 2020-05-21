@@ -312,7 +312,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -4.650002}
+  m_AnchoredPosition: {x: 0, y: -4.6500244}
   m_SizeDelta: {x: 0, y: -9.299996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &612052809
@@ -333,7 +333,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tools and Software
+  m_text: Research
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bcb0d5cd57db385429877215aa50621f, type: 2}
   m_sharedMaterial: {fileID: -2516881754563252791, guid: bcb0d5cd57db385429877215aa50621f,
@@ -403,10 +403,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 612052809}
-    characterCount: 18
+    characterCount: 8
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 3
+    spaceCount: 0
+    wordCount: 1
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -542,8 +542,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5, y: 135.5}
-  m_SizeDelta: {x: -249.7, y: -1613}
+  m_AnchoredPosition: {x: 9.400024, y: 228}
+  m_SizeDelta: {x: -64.7, y: -1427.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &901858004
 MonoBehaviour:
@@ -794,7 +794,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pandonomics
+  m_text: Thank you for listening!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bcb0d5cd57db385429877215aa50621f, type: 2}
   m_sharedMaterial: {fileID: -2516881754563252791, guid: bcb0d5cd57db385429877215aa50621f,
@@ -864,12 +864,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1875813866}
-    characterCount: 11
+    characterCount: 24
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 3
+    wordCount: 4
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

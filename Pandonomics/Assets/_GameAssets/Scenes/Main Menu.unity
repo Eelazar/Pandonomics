@@ -2453,7 +2453,6 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 2
   TextLabel: {fileID: 0}
-  TextMeshProLabel: {fileID: 550285382}
 --- !u!114 &148858044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4865,7 +4864,6 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 2
   TextLabel: {fileID: 0}
-  TextMeshProLabel: {fileID: 1167472221}
 --- !u!114 &263032393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7343,7 +7341,6 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 2
   TextLabel: {fileID: 0}
-  TextMeshProLabel: {fileID: 676979463}
 --- !u!114 &474523947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9911,7 +9908,6 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 2
   TextLabel: {fileID: 0}
-  TextMeshProLabel: {fileID: 1023794273}
 --- !u!114 &598897264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10621,7 +10617,7 @@ GameObject:
   - component: {fileID: 949999145}
   - component: {fileID: 949999144}
   m_Layer: 0
-  m_Name: MasterCanvas
+  m_Name: Canvas - MenuCancas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10644,8 +10640,8 @@ MonoBehaviour:
   StartRotation: {x: 0, y: 0, z: 0}
   StartScale: {x: 1, y: 1, z: 1}
   StartAlpha: 1
-  CanvasName: MasterCanvas
-  CustomCanvasName: 0
+  CanvasName: MenuCancas
+  CustomCanvasName: 1
   DontDestroyCanvasOnLoad: 1
 --- !u!114 &949999145
 MonoBehaviour:
@@ -15878,7 +15874,6 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 2
   TextLabel: {fileID: 0}
-  TextMeshProLabel: {fileID: 767227122}
 --- !u!114 &1745881611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18382,7 +18377,6 @@ MonoBehaviour:
     PresetName: 
   TargetLabel: 2
   TextLabel: {fileID: 0}
-  TextMeshProLabel: {fileID: 1860408158}
 --- !u!114 &1848613561
 MonoBehaviour:
   m_ObjectHideFlags: 0
