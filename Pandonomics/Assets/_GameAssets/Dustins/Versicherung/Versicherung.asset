@@ -14,20 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stockGroupName: 
   allGrowthValues:
-  - NaN
-  - NaN
-  - NaN
-  - NaN
-  - NaN
-  - NaN
-  - NaN
-  - NaN
-  - NaN
-  - NaN
-  - NaN
-  - NaN
+  - -0.005949974
+  - -0.021415075
+  - 0.031973045
+  - -0.39685214
+  - 0.051424343
+  - 0.009906213
+  - -0.02515467
+  - 0.035362005
+  - 0.2405266
+  - 0.0029022694
+  - -0.004426638
+  - 0.0061658225
   numberOfStocks: 3
   allStocks:
-  - {fileID: 11400000, guid: 3e6e53006ca06aa4d8d07d0cc7791b00, type: 2}
   - {fileID: 11400000, guid: 7add60762d5e09749a47075a50ef3650, type: 2}
+  - {fileID: 11400000, guid: 3e6e53006ca06aa4d8d07d0cc7791b00, type: 2}
   - {fileID: 11400000, guid: 2ac0987e4d3cb3e4e9fae1160868f906, type: 2}
